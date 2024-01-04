@@ -40,13 +40,11 @@ const GenerateAndMergePDFs = () => {
             
             const mergedPdfBytes = await mergePdfs(generatedPdfs);
             
-            // Handle the merged PDF as needed (e.g., display or save)
     // console.log('Merged PDF:', mergedPdfBytes);
 
     const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
     saveAs(blob, 'merged.pdf');
     
-    // Update the state or perform any other actions if needed
     setPdfs(generatedPdfs);
 };
     //First Main Function To Send PDF To Server
@@ -77,7 +75,6 @@ const GenerateAndMergePDFs = () => {
     };
     
 
-  // The rest of your functions remain unchanged
 
 
     const generatePdfFromHtml = async (htmlContent) => {
@@ -114,7 +111,7 @@ const GenerateAndMergePDFs = () => {
 
             //Function To Handeled All Function 
             let HandlingFun = () => {
-                let dynamicId = new Date().getTime(); // You can use a more sophisticated method for generating dynamic IDs
+                let dynamicId = new Date().getTime(); 
                 let PDF = generateAndMergePDF();
                 sendPdfToServer(PDF, dynamicId);
             };
